@@ -3,10 +3,10 @@ server:
 
 spring:
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/alipay?serverTimezone=UTC
     username: root
-    password: 123
+    password: root
     type: com.alibaba.druid.pool.DruidDataSource
     #最大活跃数
     maxActive: 20

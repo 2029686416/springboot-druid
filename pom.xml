@@ -40,14 +40,19 @@
 		   <artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 		<!-- Mysql驱动包 -->
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 		<dependency>
-		   <groupId>mysql</groupId>
-		   <artifactId>mysql-connector-java</artifactId>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.47</version>
 		</dependency>
+
 		<!--配置springboot支持jsp  添加tomcat支持 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<!-- 打包发布 排除tomcat依赖 -->
+			<scope>provided</scope>
 		</dependency>
 		<!--配置springboot支持jsp  添加jsp支持 -->
 		<dependency>
@@ -119,6 +124,13 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 
+			</plugin>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>com.demo.SpringbootBruidApplication</mainClass>
+				</configuration>
 			</plugin>
 		</plugins>
 		<!-- idea 无法识别在src文件夹下的xml 跳过测试打包 -->
