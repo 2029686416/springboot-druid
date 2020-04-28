@@ -12,8 +12,21 @@
     User Page!
 
 </body>
-<script type="text/javascript" src="${ctx}/static/js/jquery-2.1.3.min.js"></script>
+<script src="http://cdn.bootcss.com/jquery/1.12.3/jquery.min.js"></script>
 <script type="text/javascript">
-
+$.ajax({
+    url: "/pagehelper",
+    type: 'POST',
+	dataType:"json",
+	contentType: 'application/json',
+	data:JSON.stringify({"robitid":""}),
+    dataSrc: function (myJson) {
+        if (myJson.timeout) {
+            return "";
+        }
+        console.log(myJson);
+        return myJson;
+    }
+  })
 </script>
 </html>

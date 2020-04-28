@@ -1,8 +1,12 @@
 package com.demo.web.model;
 
 import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
 
 import javax.persistence.*;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 public class User implements Serializable{
 	private String id;
@@ -13,8 +17,35 @@ public class User implements Serializable{
 	
 	private String hobby;
 	
-    public String getHobby() {
+	private List<Product> productList;
+	
+	private Product product;
+
+	public Product getProduct() {
+		return product;
+	}
+	public void setProduct(Product product) {
+		this.product = product;
+	}
+
+	public List<Product> getProductList() {
+		return productList;
+	}
+	public void setProductList(List<Product> productList) {
+		this.productList = productList;
+	}
+	
+	@DateTimeFormat(pattern="yyyy-MM-dd")
+	private Date date;
+	
+	public String getHobby() {
 		return hobby;
+	}
+	public Date getDate() {
+		return date;
+	}
+	public void setDate(Date date) {
+		this.date = date;
 	}
 	public void setHobby(String hobby) {
 		this.hobby = hobby;

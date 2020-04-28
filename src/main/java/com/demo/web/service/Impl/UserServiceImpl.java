@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.demo.web.dao.UserMapper;
 import com.demo.web.model.User;
+import com.demo.web.model.UserDTO;
 import com.demo.web.service.UserService;
 
 @Service
@@ -20,6 +21,12 @@ public class UserServiceImpl implements UserService{
 		// TODO Auto-generated method stub
 		return userMapper.selectList();
 	}
+	
+	@Override
+	public List<UserDTO> selectListD() {
+		// TODO Auto-generated method stub
+		return userMapper.selectListD();
+	}
 
 	@Override
 	public User findById(String idab) {
@@ -31,5 +38,11 @@ public class UserServiceImpl implements UserService{
 	public User findById(User user) {
 		// TODO Auto-generated method stub
 		return userMapper.findByIds(user);
+	}
+
+	@Override
+	public int insertUser(User user) {
+		// TODO Auto-generated method stub
+		return userMapper.insertUser(user);
 	}
 }

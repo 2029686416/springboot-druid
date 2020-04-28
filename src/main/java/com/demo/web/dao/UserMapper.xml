@@ -1,20 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.demo.web.dao.UserMapper">
-  <resultMap id="BaseResultMap" type="com.demo.web.model.User">
+  <resultMap id="BaseResultMap" type="com.demo.web.model.UserDTO">
     <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="sex" jdbcType="VARCHAR" property="sex" />
     <result column="id" jdbcType="VARCHAR" property="id" />
+    <result column="date" jdbcType="TIMESTAMP" property="date"/>
+    <association property="product" javaType="com.demo.web.model.Product" resultMap="productMap">
+    	
+    </association>
+    <collection  property="productList" column="{proId=id}" ofType="com.demo.web.model.Product"
+			select="selectProductById">
+			
+	</collection>
   </resultMap>
-  <select id="selectList" resultMap="BaseResultMap">
-    select * from user;
+  <resultMap id="productMap" type="com.demo.web.model.Product">
+    <result column="id" jdbcType="VARCHAR" property="id" />
+  	<result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="price" jdbcType="INTEGER" property="price" />
+  </resultMap>
+  
+  <select id="selectProductById" resultType="com.demo.web.model.Product">
+    select p.name from  product p where p.id=#{proId}
+  </select>
+  
+  <select id="selectListw" resultMap="BaseResultMap">
+    select u.id,u.username from user u
+  </select>
+  
+  <select id="selectListD" resultMap="BaseResultMap">
+    select u.id,u.username from user u
   </select>
 
+  <insert id="insertUser" parameterType="com.demo.web.model.User">
+  	INSERT into user VALUES (#{id,jdbcType=VARCHAR},#{username,jdbcType=VARCHAR},#{sex,jdbcType=TIMESTAMP},#{hobby,jdbcType=VARCHAR},#{date,jdbcType=VARCHAR})
+  </insert>
 
   <select id="findById" resultMap="BaseResultMap">
-    select * from user where id=#{ids,jdbcType=VARCHAR};
+    select * from user where id=#{ids,jdbcType=VARCHAR}
   </select>
   <select id="findByIds" resultMap="BaseResultMap">
-    select * from user where id=#{id,jdbcType=VARCHAR};
+    select * from user where id=#{id,jdbcType=VARCHAR}
   </select>
 </mapper>
