@@ -20,10 +20,10 @@
 
 	<dependencies>
 		<!--安全-->
-		<dependency>
+		<!-- <dependency>
 		  <groupId>org.springframework.boot</groupId>
 		  <artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
+		</dependency> -->
 		<!-- springboot使用@SpringBootTest注解进行单元测试 -->
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
 		<dependency>

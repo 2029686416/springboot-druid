@@ -24,7 +24,7 @@
     select p.name from  product p where p.id=#{proId}
   </select>
   
-  <select id="selectListw" resultMap="BaseResultMap">
+  <select id="selectList" resultMap="BaseResultMap">
     select u.id,u.username from user u
   </select>
   

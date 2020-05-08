@@ -2,6 +2,8 @@ package com.demo.web.test;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 
 import com.demo.web.common.ResponseVo;
@@ -17,6 +19,13 @@ import net.sf.json.JSONObject;
 */
 public class Test {
 
+	@org.junit.Test
+	public void date() {
+		SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd");
+		Date date = new Date();
+		System.out.println(formatter.format(date));
+	}
+	
 	public static void main(String[] args) {
 		HashMap<String, Object> map = new HashMap<>();
 		map.put("a", "a");
