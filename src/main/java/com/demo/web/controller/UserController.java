@@ -37,6 +37,8 @@ public class UserController {
 	@RequestMapping("/getList")
 	public List<User> getList() {
 		System.out.println("port:"+port);
+		System.out.println("port:"+port);
+		System.out.println("port:"+port);
 		List<User> selectList = userService.selectList();
 		return selectList;
 	}
