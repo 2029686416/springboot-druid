@@ -5,6 +5,7 @@ import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Map;
 
 import com.demo.web.common.ResponseVo;
 import com.demo.web.model.User;
@@ -19,14 +20,20 @@ import net.sf.json.JSONObject;
 */
 public class Test {
 
-	@org.junit.Test
 	public void date() {
-		SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd");
+		SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		Date date = new Date();
 		System.out.println(formatter.format(date));
 	}
 	
 	public static void main(String[] args) {
+		Map<String, Object> map = new HashMap<>();
+		map.put("id", "1");
+		map.put("name", 0);
+		System.out.println(map);
+	}
+	
+	public static void main2(String[] args) {
 		HashMap<String, Object> map = new HashMap<>();
 		map.put("a", "a");
 		map.put("b", "b");

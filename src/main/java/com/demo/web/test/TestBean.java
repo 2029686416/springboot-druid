@@ -28,9 +28,9 @@ public class TestBean {
 		
 	}
 	
-	@PostConstruct//项目启动就加载该方法
+	/*@PostConstruct//项目启动就加载该方法
 	public void nm() {
 		System.out.println("0---------");
-	}
+	}*/
 	
 }

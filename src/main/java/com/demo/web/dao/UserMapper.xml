@@ -28,6 +28,10 @@
     select u.id,u.username from user u
   </select>
   
+  <select id="selectMenuList" resultType="com.demo.web.model.Menu">
+    select * from menu
+  </select>
+  
   <select id="selectListD" resultMap="BaseResultMap">
     select u.id,u.username from user u
   </select>
