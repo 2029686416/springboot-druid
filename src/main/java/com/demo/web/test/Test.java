@@ -19,7 +19,7 @@ import net.sf.json.JSONObject;
 */
 public class Test {
 
-	@org.junit.Test
+//	@org.junit.Test
 	public void date() {
 		SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd");
 		Date date = new Date();
