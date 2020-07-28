@@ -205,7 +205,25 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
         </dependency>
-    </dependencies>
+        
+        <!-- modbus依赖 -->
+		<dependency>
+			<groupId>com.intelligt.modbus</groupId>
+			<artifactId>jlibmodbus</artifactId>
+			<version>1.2.9.7</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.infiniteautomation</groupId>
+		    <artifactId>modbus4j</artifactId>
+		    <version>3.0.5</version>
+		</dependency>
+		<dependency>
+	        <groupId>com.digitalpetri.modbus</groupId>
+	        <artifactId>modbus-master-tcp</artifactId>
+	        <version>1.1.0</version>
+	    </dependency>
+	    
+	    </dependencies>
 
 	<build>
 		<plugins>

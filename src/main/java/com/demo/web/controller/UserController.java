@@ -1,6 +1,9 @@
 package com.demo.web.controller;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +35,19 @@ public class UserController {
 	@RequestMapping("/testRabbitmq")
 	public void testRabbitmq() {
 		rabbitTemplate.convertAndSend("test_exc", "abc", "7715");
+	}
+	
+	
+	
+	@RequestMapping("/getTest")
+	public List<Map<String, Object>> getTest() {
+		List<Map<String, Object>> list = new ArrayList<Map<String,Object>>();
+		Map<String, Object> map = new HashMap<>();
+		map.put("id", "1");
+		map.put("name", 0);
+		list.add(map);
+		System.out.println(map);
+		return list;
 	}
 	
 	@RequestMapping("/getList")

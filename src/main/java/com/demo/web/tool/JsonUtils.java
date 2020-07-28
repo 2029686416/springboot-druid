@@ -124,6 +124,7 @@ public class JsonUtils {
         return list;  
     } 
     
+    
 	public static void main(String[] args) {
 		String jsString = "[{\"merchantId\":\"13\",\"result\":\"0\",\"reason\":\"\"},{\"merchantId\":\"14\",\"result\":\"1\",\"reason\":\"余额不足\"}]";
 		List<Map<String,Object>> ls = parseJSON2List(jsString);

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.demo.web.dao.UserMapper;
+import com.demo.web.model.Menu;
 import com.demo.web.model.User;
 import com.demo.web.model.UserDTO;
 import com.demo.web.service.UserService;
@@ -44,5 +45,11 @@ public class UserServiceImpl implements UserService{
 	public int insertUser(User user) {
 		// TODO Auto-generated method stub
 		return userMapper.insertUser(user);
+	}
+
+	@Override
+	public List<Map<String, Object>> selectMenuList() {
+		// TODO Auto-generated method stub
+		return userMapper.selectMenuList();
 	}
 }
