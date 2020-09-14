@@ -9,7 +9,7 @@ import com.demo.web.model.UserDTO;
 
 public interface UserService {
 	List<User> selectList();
-	
+
 	List<Map<String, Object>> selectMenuList();
 	
 	List<UserDTO> selectListD();
