@@ -38,20 +38,13 @@ spring:
     view:
       prefix: /WEB-INF/view/
       suffix: .jsp
-  #rabbitmq:
-    #host: 127.0.0.1
-    #port: 5672
-    #username: guest
-    #password: guest
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
     #虚拟host 可以不设置,使用server默认host
     #virtual-host: JCcccHost
-  data:
-    elasticsearch:
-      cluster-name: jiudao-group
-      cluster-nodes: 192.168.5.63:9201
-      repositories:
-        enabled: true
-  jackson:
     default-property-inclusion: non_null
 logging:
   level:
